@@ -2,20 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.animate-scrollz {
+  display: flex;
+  animation: scroll 15s linear infinite; /* Default for mobile */
+  width: calc(300% + 40rem); /* Adjusts the width for seamless scrolling */
+}
+
+/* For larger devices */
+@media (min-width: 768px) {
+  .animate-scrollz {
+    animation: scroll 40s linear infinite; 
+    width: calc(800% + 3rem); /* Adjusts the width for seamless scrolling */
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
