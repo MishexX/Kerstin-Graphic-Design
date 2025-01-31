@@ -1,5 +1,7 @@
 'use client'
+import ContactForm from '@/components/ContactForm'
 import Marquees from '@/components/Marquee'
+import Works from '@/components/Works'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useRef, useState } from 'react'
@@ -96,7 +98,7 @@ const Page = () => {
    
                   <div className=' relative'> 
             
-            <Image src={'/bg.jpg'} alt='' width={5000} height={5000} className=' w-full  blur-[4px] h-screen object-cover' />
+            <Image src={'/Background.jpg'} alt='' width={5000} height={5000} className=' w-full   h-screen    object-cover object-right' />
                      
                      <div className=' bg-black top-0  opacity-50     absolute w-full h-full'>   </div>
             </div>
@@ -190,7 +192,8 @@ const Page = () => {
                   
               {/* lg:flex hidden */}
                   <div className="    font-poppins text-xl        font-normal gap-10 lg:flex hidden   items-center"> 
-               
+                         
+                         <Image src="/textLogo.png" alt='' className=' w-36 h-fit object-cover' width={500} height={500} />
                 
                     <h1 onClick={() => scrollToSection(aboutMe)}   className=" cursor-pointer text-white   flex-shrink-0  "  >ÜBER MICH </h1>
                     <h1 onClick={() => scrollToSection(leistungen)}  className=" cursor-pointer text-white   flex-shrink-0  "  >LEISTUNGEN </h1>
@@ -221,27 +224,27 @@ const Page = () => {
         <div className="flex flex-col space-y-4 text-white w-full ">
           {/* Logos */}
           <div className="flex items-center  mx-auto  gap-3  ">
-            <Image className=' w-full object-cover' src="/logomain.png" width={500} height={500} alt="Logo 1" />
+            <Image className=' w-[80%] mx-auto object-cover' src="/sitelogo.png" width={500} height={500} alt="Logo 1" />
             {/* <Image className=' w-24 lg:w-64 object-cover' src="/company1.jfif" width={500} height={500} alt="Logo 2" /> */}
           </div>
           
-          <p className="text-lg max-w-sm text-center mx-auto font-light">
+          <p className="text-2xl max-w-md text-center mx-auto font-light">
             Durchdachtes Design, klare Botschaften – damit Deine Ideen sichtbar werden.
           </p>
           
           <div className=' flex justify-center'>
 
        
-          <button className="border  border-white px-4 py-2 text-white rounded-full">
+          <button className="border  border-white px-6 py-2 text-white rounded-full">
             Jetzt anfragen
           </button>
           </div>
 
           {/* Social Icons */}
           <div className="flex justify-center space-x-4">
-          <a href="#"><img src="/whatsapp.png" alt="LinkedIn" className="w-fit" /></a>
-          <a href="#"><img src="/instagram.png" alt="Facebook" className="w-fit" /></a>
-            <a href="#"><img src="/li.png" alt="Instagram" className="w-fit" /></a>
+          <a href="#"><img src="/whtsapp.png" alt="LinkedIn" className="w-fit" /></a>
+          <a href="#"><img src="/insta.png" alt="Facebook" className="w-fit" /></a>
+            <a href="#"><img src="/linkedin.png" alt="Instagram" className="w-fit" /></a>
           
    
           </div>
@@ -361,17 +364,42 @@ const Page = () => {
 
 
 
+
+   {/* MY WORKS  */}
+
+   <div className=' bg-[#F1F1F1] border-black/10  border-b-2 w-full  py-20'>
+    <div className='flex justify-center'> 
+
+   <h1 className="text-5xl text-center w-fit rounded-full px-4 py-2 border-2 border-black b">
+     PROJECTE
+    </h1>
+
+
+          
+    </div>
+
+  <div className=' mt-5'>
+
+ 
+    <Works />
+
+    </div>
+   </div>
+   {/* MY WORKS  */}
+
+
+
    {/* ABOUT ME  */}
-    <div  ref={aboutMe} className="  py-10 bg-[#F1F1F1]  ">
+    <div  ref={aboutMe} className="  py-10 bg-[#F2F2F2]  ">
    
          <div className="  max-w-6xl mx-auto w-full">
 
             
    
-         <div className=" grid  bg-  lg:grid-cols-2 gap-6 lg:gap-10 px-4 items-center justify-center grid-cols-1">
+         <div className=" grid lg:grid-cols-2 gap-6 lg:gap-6 px-4 items-center justify-center grid-cols-1">
            
    
-           <Image src={'/cloth.jpg'} alt="" width={2000} height={2000} className=" lg:w-full w-full  rounded-md sm:w-[60%] mx-auto object-cover h-full" />
+           <Image src={'/aboutmereal.png'} alt="" width={2000} height={2000} className=" lg:w-[90%] w-full   rounded-md sm:w-[60%] mx-auto object-cover h-full" />
    
    
            <div className=" flex flex-col gap-5">
@@ -379,56 +407,79 @@ const Page = () => {
            <div className=' w-fit mx-auto '>
 
       
-           <h1 className="text-5xl text-center rounded-full px-4 py-2 border-2 border-black b">
+           <h1 className="text-6xl text-center rounded-full px-4 py-2 border-2 border-black b">
            ÜBER MICH
     </h1>
     </div>
 
     <div className=' flex justify-center items-center gap-2'>
      
-     <div className=' w-2    h-2    bg-black rounded-full'>   </div>
+     <div className=' w-2    h-2    bg-[#959e9d] rounded-full'>   </div>
 
-      <h1 className=' font-poppins font-medium text-gray-500 text-center'>  Kreativität trifft Strategie</h1>
+      <h1 className=' font-poppins text-lg font-medium text-[#959e9d] text-center'>  Kreativität trifft Strategie</h1>
 
-      <div className=' w-2   h-2   bg-black rounded-full'>   </div>
+      <div className=' w-2   h-2   bg-[#959e9d] rounded-full'>   </div>
       </div>      
 
               <div className=' flex flex-col gap-5'> 
 
-              <p className=" font-poppins font-medium   text-center   lg:max-w-full max-w-xl mx-auto  text-lg  text-black}">
-             {`To Empower Creative Entreprenueurs To Build`}
+              <p className="   font-medium font-fontSanz  text-center  lg:max-w-sm  max-w-xl mx-auto  text-lg  text-black}">
+             {`Hey, ich bin `} <span className="relative " > Kerstin Morokutti  <span> 
+              
+              
+              <Image src="/line1.png" alt='' width={1000} height={1000} className=' absolute    top-3 scale-150 right-0 z-10 w-full h-full object-cover' />
+              
+                </span>  </span>    {`– Grafikdesignerin aus Wien. Ich entwickle`}
+                
+                
+                  <span className="relative   " > Designs,
+                     
+                  <span> 
+              
+              
+              <Image src="/rnd.png" alt='' width={1000} height={1000} className=' absolute    top-0  left-0 z-20 w-24 h-24 object-cover' />
+              
+                </span> 
+
+                    
+                    </span>  
+                  
+                  
+                  
+                  {`die nicht nur gut aussehen, sondern Deine Marke spürbar nach vorne bringen.`}
                </p>
 
-             <div className=' flex flex-col gap-1'> 
+         
 
             
 
-          
-             <p className=" font-poppins font-medium   text-center   lg:max-w-full max-w-xl mx-auto  text-lg  text-black}">
-             {`To Empower Creative Entreprenueurs To Build A Business`}
+
+
+             <p className="   font-medium font-fontSanz   text-center  lg:max-w-sm  max-w-xl mx-auto  text-lg  text-black">
+             {`Egal ob Branding, Print oder Digital – ich mache deine Vision sichtbar, einprägsam und wirkungsvoll.`}
                </p>
 
-               <p className=" font-poppins font-medium   text-center   lg:max-w-full max-w-xl mx-auto  text-lg  text-black}">
-             <span> Without</span> The Overwhelm Of Social Media Entreprenueurs To Build A Business
+              
+
+
+             <p className="   font-medium  font-fontSanz  text-center  lg:max-w-sm  max-w-xl mx-auto  text-lg  text-black">
+             {`Lass uns gemeinsam etwas schaffen, das Eindruck hinterlässt!`}
                </p>
 
+              
 
-               </div>
+
+      
 
              
    
 
-               <p className=" font-poppins font-medium   text-center   lg:max-w-full max-w-xl mx-auto  text-lg  text-black}">
-             {`To Empower Creative Entreprenueurs To Build A Business Without The Overwhelm Of Social Media To Empower Creative Entreprenueurs To Build`}
-               </p>
    
 
-               <p className=" font-poppins font-medium   text-center   lg:max-w-full max-w-xl mx-auto  text-lg  text-black}">
-             {`To Empower Creative Entreprenueurs To Build A Business Without The Overwhelm Of Soct-black `}
-               </p>
-   
                </div>
             
+
+             {/* <Image alt='' width={10000} height={10000} src="/tee.png" className=' w-full h-full object-contain'  /> */}
    
            </div>
    
@@ -442,6 +493,27 @@ const Page = () => {
         </div>
         {/* ABOUT ME  */}
    {/* ABOUT ME  */}
+
+
+
+
+
+
+   {/* CONTACT US FORM   */}
+
+
+   <ContactForm />
+   
+   {/* CONTACT US FORM   */}
+
+
+
+
+
+
+
+
+
 
 
 
