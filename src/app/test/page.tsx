@@ -432,14 +432,14 @@ const Page = () => {
                 </span>  </span>    {`– Grafikdesignerin aus Wien. Ich entwickle`}
                 
                 
-                  <span className="relative   " > Designs,
+                  <span className="relative  w-full  " > Designs,
                      
-                  <span> 
+                  
               
               
-              <Image src="/rnd.png" alt='' width={1000} height={1000} className=' absolute    top-0  left-0 z-20 w-24 h-24 object-cover' />
+              {/* <Image src="/rnd.png" alt='' width={1000} height={1000} className='w-48  right-10 absolute top-0  h-fit ' /> */}
               
-                </span> 
+              
 
                     
                     </span>  
@@ -455,9 +455,29 @@ const Page = () => {
 
 
 
-             <p className="   font-medium font-fontSanz   text-center  lg:max-w-sm  max-w-xl mx-auto  text-lg  text-black">
+             {/* <p className="  relative bg-red-200  font-medium font-fontSanz   text-center  lg:max-w-sm  max-w-xl mx-auto  text-lg  text-black">
              {`Egal ob Branding, Print oder Digital – ich mache deine Vision sichtbar, einprägsam und wirkungsvoll.`}
-               </p>
+              
+              <span className=' absolute flex   right-0 top-0 w-full' >
+                <Image alt='' src="/showbelow.png" className=' w-40 h-fit' width={1000} height={1000} />
+              </span>
+
+               </p> */}
+
+<p className="relative  font-medium font-fontSanz text-center lg:max-w-sm max-w-xl mx-auto text-lg text-black">
+  {`Egal ob Branding, Print oder Digital – ich mache deine Vision sichtbar, einprägsam und wirkungsvoll.`}
+
+  <span className="absolute md:-top-2   top-6 lg:top-6     -right-20 md:-right-14 lg:-right-20">
+    <Image
+      alt=""
+      src="/showbelow.png"
+      className="w-48 h-fit"
+      width={1000}
+      height={1000}
+    />
+  </span>
+</p>
+
 
               
 
@@ -493,6 +513,141 @@ const Page = () => {
         </div>
         {/* ABOUT ME  */}
    {/* ABOUT ME  */}
+
+
+
+
+
+{/* kreative professioanl  */}
+<div className="max-w-7xl  overflow-hidden  items-center grid lg:mt-0 mt-10  grid-cols-1 lg:gap-0 gap-10 lg:grid-cols-2  ">
+      {/* Left side (Quote Card) */}
+      <div>
+
+     
+      <div className="flex items-center justify-center  w-full  px-6 py-12">
+        <div className="relative bg-[#d7e3db] p-8  max-w-md w-full rounded-lg shadow-lg  text-center">
+          {/* Large Quote Icon */}
+          {/* <span className="absolute top-[-20px] left-[-20px] text-6xl text-gray-700">
+            &ldquo;
+          </span> */}
+
+          <h2 className="text-4xl mt-5 max-w-48  mx-auto font-semibold text-gray-900">
+            Kreativ & Professionell
+          </h2>
+          <p className="text-gray-700 text-xl mx-auto  max-w-xs mt-4">
+            Ihre Logos bringen Marken zum Strahlen! Empfehle ich wärmstens für
+            jedes Designbedürfnis.
+          </p>
+          <div className="mt-6">
+            <p className="font-bold text-gray-900 text-lg">Jürgen Giwiser</p>
+            <p className="text-gray-600 text-lg">Gründer Care:IT</p>
+          </div>
+
+          {/* Button with arrow */}
+          
+          <Image src="/quote.png" alt='' width={100} height={100} className=' absolute  left-4 -top-16 w-32 h-fit object-cover' />
+       
+        </div>
+      </div>
+      
+      <div className=' bg-[#2E2E2E]  w-12 mx-auto h-12 rounded-full flex items-center justify-center'>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.9" stroke="currentColor" className="size-6 text-white">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+</svg>
+
+
+      </div>
+
+      </div>
+      {/* Right side (Image) */}
+      <div className="relative w-full flex overflow-hidden h-[90vh] lg:h-[80vh]">
+        <Image
+          src="/phoneImage.jpg" // Change this to your actual image path
+          alt="Quote Section Image"
+          layout="fill"
+          objectFit="cover"
+          className=" w-full lg:px-0 px-2 h-full"
+        />
+      </div>
+    </div>
+{/* kreative professioanl  */}
+ 
+
+
+
+
+
+ {/* KERSTIN MOROKUTTI  */}
+ <div
+      className="min-h-screen flex items-center justify-center bg-cover bg-center px-4 md:px-10 lg:px-20"
+      style={{ backgroundImage: "url('/bgsecond.png')" }} // Replace with your actual image URL
+    >
+      <div className="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white bg-opacity-10 p-10 rounded-xl">
+        {/* Left Side - Name and Social Icons */}
+        <div>
+          <h1 className="text-5xl font-bold max-w-sm    leading-tight text-black">Kerstin Morokutti</h1>
+          <p className="text-lg text-black mt-2">Graphic Designer</p>
+
+          {/* Social Icons */}
+          <div className="flex gap-4 mt-6">
+            <button className="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full">
+              📞
+            </button>
+            <button className="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full">
+              📷
+            </button>
+            <button className="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full">
+              💼
+            </button>
+          </div>
+        </div>
+
+        {/* Right Side - Contact Form */}
+        <div>
+          <form className="space-y-6 max-w-sm mx-auto">
+            <div>
+              <label className="block text-black text-lg">Vorname</label>
+              <input
+                type="text"
+                className="w-full border-b border-black bg-transparent p-2 outline-none text-black"
+                placeholder="Dein Vorname"
+              />
+            </div>
+            <div>
+              <label className="block text-black text-lg">Nachname</label>
+              <input
+                type="text"
+                className="w-full border-b border-black bg-transparent p-2 outline-none text-black"
+                placeholder="Dein Nachname"
+              />
+            </div>
+            <div>
+              <label className="block text-black text-lg">E-Mail</label>
+              <input
+                type="email"
+                className="w-full border-b border-black bg-transparent p-2 outline-none text-black"
+                placeholder="Deine E-Mail"
+              />
+            </div>
+            <div>
+              <label className="block text-black text-lg">Nachricht</label>
+              <textarea
+                className="w-full border-b border-black bg-transparent p-2 outline-none text-black"
+                placeholder="Deine Nachricht"
+                rows={3}
+              ></textarea>
+            </div>
+
+            {/* Submit Button */}
+            <button className="bg-black text-white px-6 py-3 rounded-full text-lg">
+              Jetzt Anfragen!
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+ {/* KERSTIN MOROKUTTI  */}
+
 
 
 
