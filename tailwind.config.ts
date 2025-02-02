@@ -20,7 +20,8 @@ export default {
       fontFamily: {
      
         poppins: ["var(--font-poppins)"],
-        fontSanz : ["var(--sansFont)"]
+        fontSanz : ["var(--sansFont)"],
+        fontFair : ["var(--font-playfair)"]
       
       
       },

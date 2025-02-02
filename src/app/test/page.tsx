@@ -1,10 +1,13 @@
 'use client'
 import ContactForm from '@/components/ContactForm'
+import ImageCarousel from '@/components/ImageCarousel'
 import Marquees from '@/components/Marquee'
 import Works from '@/components/Works'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useRef, useState } from 'react'
+import { db, collection, addDoc } from "@/utils/firebase"; // Adjust path if needed
 
 const Page = () => {
 
@@ -89,6 +92,114 @@ const Page = () => {
 
 
     //   scroll to section 
+
+     
+    const [showProject, setshowProject] = useState(false)
+
+    useEffect(() => {
+      
+      setshowProject(true)
+     
+
+   
+    }, [])
+
+
+
+
+
+    // reviews 
+    const testimonials = [
+      {
+        title: "Kreativ & Professionell",
+        text: "Ihre Logos bringen Marken zum Strahlen! Empfehle ich wärmstens für jedes Designbedürfnis.",
+        name: "Jürgen Giwiser",
+        role: "Gründer Care:IT",
+        image: "/quote.png",
+      },
+      {
+        title: "Einzigartiges Design",
+        text: "Ich war beeindruckt von der Detailgenauigkeit und Qualität. Absolut empfehlenswert!",
+        name: "Anna Müller",
+        role: "CEO CreativeStudio",
+        image: "/quote.png",
+      },
+      {
+        title: "Hervorragende Arbeit",
+        text: "Die Zusammenarbeit war fantastisch und die Ergebnisse übertrafen meine Erwartungen.",
+        name: "Michael Schmidt",
+        role: "Leiter Marketing",
+        image: "/quote.png",
+      },
+    ];
+
+    const [index, setIndex] = useState(0);
+
+    const nextTestimonial = () => {
+      setIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    };
+    // reviews 
+
+
+
+
+
+
+
+
+
+
+
+    // FORM SUBMISSION 
+    const [formData, setFormData] = useState({
+      firstName: "",
+      lastName: "",
+      email: "",
+      message: "",
+    });
+  
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState<any>(null);
+  
+    // Handle Input Change
+    const handleChange = (e:any) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+  
+    // Handle Form Submission
+    const handleSubmit = async (e:any) => {
+      e.preventDefault();
+      setLoading(true);
+  
+      try {
+        await addDoc(collection(db, "contacts"), formData);
+  
+        // Show success message
+        setMessage({ type: "success", text: "Form successfully submitted!" });
+  
+        // Reset Form
+        setFormData({ firstName: "", lastName: "", email: "", message: "" });
+  
+        // Remove success message after 4 seconds
+        setTimeout(() => setMessage(null), 4000);
+      } catch (error) {
+        setMessage({ type: "error", text: "Submission failed! Try again." });
+  
+        // Remove error message after 4 seconds
+        setTimeout(() => setMessage(null), 4000);
+      }
+  
+      setLoading(false);
+    };
+  
+    // Check if all fields are filled
+    const isFormValid =
+      formData.firstName.trim() !== "" &&
+      formData.lastName.trim() !== "" &&
+      formData.email.trim() !== "" &&
+      formData.message.trim() !== "";
+    // FORM SUBMISSION 
+    
     
 
   return (
@@ -197,7 +308,7 @@ const Page = () => {
                 
                     <h1 onClick={() => scrollToSection(aboutMe)}   className=" cursor-pointer text-white   flex-shrink-0  "  >ÜBER MICH </h1>
                     <h1 onClick={() => scrollToSection(leistungen)}  className=" cursor-pointer text-white   flex-shrink-0  "  >LEISTUNGEN </h1>
-                    <h1    className="  cursor-pointer text-white  flex-shrink-0   "  >PROJECTE </h1>
+                    <h1    className="  cursor-pointer text-white  flex-shrink-0   "  >PROJEKTE </h1>
                     <h1    className="  cursor-pointer border rounded-full   flex-shrink-0 px-2 py-1 text-white  "  >JETZT ANFRAGEN </h1>
       
                     
@@ -319,11 +430,11 @@ const Page = () => {
 
       </div> */}
 
-<div    ref={leistungen}    className="w-full relative bg-cover bg-center " style={{ backgroundImage: "url('/secondbg.png')" }}>
+<div    ref={leistungen}    className="w-full relative bg-cover  " style={{ backgroundImage: "url('/secondbg.png')" }}>
   
   {/* Content Section */}
   <div className="flex flex-col justify-center items-center w-full relative z-10 py-16">
-    <h1 className="text-5xl text-center rounded-full px-4 py-2 border-2 border-black b">
+    <h1 className="text-5xl text-center rounded-full px-4 font-fontFair font-medium py-2 border-2 border-black b">
       LEISTUNGEN
     </h1>
 
@@ -367,30 +478,41 @@ const Page = () => {
 
    {/* MY WORKS  */}
 
-   <div className=' bg-[#F1F1F1] border-black/10  border-b-2 w-full  py-20'>
+   <div className=' bg-[#f2f2f2]  border-black/10  border-b-2 w-full  py-20'>
     <div className='flex justify-center'> 
 
-   <h1 className="text-5xl text-center w-fit rounded-full px-4 py-2 border-2 border-black b">
-     PROJECTE
+   <h1 className="text-5xl text-center font-fontFair font-medium  w-fit rounded-full px-4 py-2 border-2 border-black b">
+     PROJEKTE
     </h1>
 
 
           
     </div>
 
-  <div className=' mt-5'>
+  {/* <div className=' mt-5'>
 
  
     <Works />
 
-    </div>
+    </div> */}
+ 
+  {
+    showProject &&
+    <main className="flex justify-center items-center  mt-10 bg-gray-100">
+    <ImageCarousel />
+  </main>
+
+  }
+
+
+
    </div>
    {/* MY WORKS  */}
 
 
 
    {/* ABOUT ME  */}
-    <div  ref={aboutMe} className="  py-10 bg-[#F2F2F2]  ">
+    <div  ref={aboutMe} className="  py-10 bg-[#F2F2F2]   ">
    
          <div className="  max-w-6xl mx-auto w-full">
 
@@ -407,7 +529,7 @@ const Page = () => {
            <div className=' w-fit mx-auto '>
 
       
-           <h1 className="text-6xl text-center rounded-full px-4 py-2 border-2 border-black b">
+           <h1 className="text-6xl text-center font-fontFair font-medium rounded-full px-4 py-2 border-2 border-black b">
            ÜBER MICH
     </h1>
     </div>
@@ -519,9 +641,15 @@ const Page = () => {
 
 
 {/* kreative professioanl  */}
-<div className="max-w-7xl  overflow-hidden  items-center grid lg:mt-0 mt-10  grid-cols-1 lg:gap-0 gap-10 lg:grid-cols-2  ">
+<div className="max-w-7xl  overflow-hidden   bg-[#f2f2f2] items-center grid lg:mt-0 mt-10  grid-cols-1 lg:gap-0 gap-10 lg:grid-cols-2  ">
       {/* Left side (Quote Card) */}
       <div>
+
+      {/* title: "Einzigartiges Design",
+        text: "Ich war beeindruckt von der Detailgenauigkeit und Qualität. Absolut empfehlenswert!",
+        name: "Anna Müller",
+        role: "CEO CreativeStudio",
+        image: "/quote.png", */}
 
      
       <div className="flex items-center justify-center  w-full  px-6 py-12">
@@ -531,26 +659,34 @@ const Page = () => {
             &ldquo;
           </span> */}
 
-          <h2 className="text-4xl mt-5 max-w-48  mx-auto font-semibold text-gray-900">
-            Kreativ & Professionell
+          <h2 className="text-4xl mt-5 max-w-48  font-fontFair font-semibold  mx-auto text-gray-900">
+            {/* Kreativ & Professionell */}
+            {testimonials[index].title}
           </h2>
           <p className="text-gray-700 text-xl mx-auto  max-w-xs mt-4">
-            Ihre Logos bringen Marken zum Strahlen! Empfehle ich wärmstens für
-            jedes Designbedürfnis.
+            {/* Ihre Logos bringen Marken zum Strahlen! Empfehle ich wärmstens für
+            jedes Designbedürfnis. */}
+
+{testimonials[index].text}
           </p>
           <div className="mt-6">
-            <p className="font-bold text-gray-900 text-lg">Jürgen Giwiser</p>
-            <p className="text-gray-600 text-lg">Gründer Care:IT</p>
+            {/* <p className="font-bold text-gray-900 text-lg">Jürgen Giwiser</p> */}
+            <p className="font-bold text-gray-900 text-lg">{testimonials[index].name}</p>
+            {/* <p className="text-gray-600 text-lg">Gründer Care:IT</p> */}
+            <p className="text-gray-600 text-lg">{testimonials[index].role}</p>
           </div>
 
           {/* Button with arrow */}
           
-          <Image src="/quote.png" alt='' width={100} height={100} className=' absolute  left-4 -top-16 w-32 h-fit object-cover' />
+          <Image 
+          // src="/quote.png"
+          src={testimonials[index].image} 
+          alt='' width={100} height={100} className=' absolute  left-4 -top-16 w-32 h-fit object-cover' />
        
         </div>
       </div>
       
-      <div className=' bg-[#2E2E2E]  w-12 mx-auto h-12 rounded-full flex items-center justify-center'>
+      <div onClick={nextTestimonial} className=' bg-[#2E2E2E] cursor-pointer select-none  w-12 mx-auto h-12 rounded-full flex items-center justify-center'>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.9" stroke="currentColor" className="size-6 text-white">
   <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
 </svg>
@@ -580,37 +716,39 @@ const Page = () => {
  {/* KERSTIN MOROKUTTI  */}
  <div
       className="min-h-screen flex items-center justify-center bg-cover bg-center px-4 md:px-10 lg:px-20"
-      style={{ backgroundImage: "url('/bgsecond.png')" }} // Replace with your actual image URL
+      style={{ backgroundImage: "url('/bgreal.png')" }} // Replace with your actual image URL
     >
       <div className="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white bg-opacity-10 p-10 rounded-xl">
         {/* Left Side - Name and Social Icons */}
-        <div>
-          <h1 className="text-5xl font-bold max-w-sm    leading-tight text-black">Kerstin Morokutti</h1>
+        <div className=' flex flex-col'>
+          <div className='  w-fit'>
+
+         
+          <h1 className="text-7xl  max-w-sm font-fontFair  font-bold  text-black">Kerstin Morokutti</h1>
           <p className="text-lg text-black mt-2">Graphic Designer</p>
 
+          </div>
+
           {/* Social Icons */}
-          <div className="flex gap-4 mt-6">
-            <button className="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full">
-              📞
-            </button>
-            <button className="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full">
-              📷
-            </button>
-            <button className="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full">
-              💼
-            </button>
+          <div className="flex grow items-end gap-4 mt-6">
+          <a href="#"><img src="/whtsapp.png" alt="LinkedIn" className="w-fit" /></a>
+          <a href="#"><img src="/insta.png" alt="Facebook" className="w-fit" /></a>
+            <a href="#"><img src="/linkedin.png" alt="Instagram" className="w-fit" /></a>
           </div>
         </div>
 
         {/* Right Side - Contact Form */}
         <div>
-          <form className="space-y-6 max-w-sm mx-auto">
-            <div>
+          <form onSubmit={handleSubmit} className="space-y-6 max-w-sm mx-auto">
+            <div className=' border-t border-black pt-3'>
               <label className="block text-black text-lg">Vorname</label>
               <input
                 type="text"
                 className="w-full border-b border-black bg-transparent p-2 outline-none text-black"
-                placeholder="Dein Vorname"
+                name="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
+                // placeholder="Dein Vorname"
               />
             </div>
             <div>
@@ -618,7 +756,10 @@ const Page = () => {
               <input
                 type="text"
                 className="w-full border-b border-black bg-transparent p-2 outline-none text-black"
-                placeholder="Dein Nachname"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                // placeholder="Dein Nachname"
               />
             </div>
             <div>
@@ -626,23 +767,50 @@ const Page = () => {
               <input
                 type="email"
                 className="w-full border-b border-black bg-transparent p-2 outline-none text-black"
-                placeholder="Deine E-Mail"
+                name="email"
+            value={formData.email}
+            onChange={handleChange}
+                // placeholder="Deine E-Mail"
               />
             </div>
             <div>
               <label className="block text-black text-lg">Nachricht</label>
               <textarea
                 className="w-full border-b border-black bg-transparent p-2 outline-none text-black"
-                placeholder="Deine Nachricht"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                // placeholder="Deine Nachricht"
                 rows={3}
               ></textarea>
             </div>
 
             {/* Submit Button */}
-            <button className="bg-black text-white px-6 py-3 rounded-full text-lg">
+            {/* <button className="bg-black text-white px-6 py-3 rounded-full text-lg">
               Jetzt Anfragen!
-            </button>
+            </button> */}
+             <button
+          type="submit"
+          disabled={!isFormValid || loading}
+          className={`px-6 py-3 rounded-full text-lg ${
+            isFormValid
+              ? "bg-black text-white"
+              : "bg-gray-500 text-gray-300 cursor-not-allowed"
+          }`}
+        >
+          {loading ? "Sending..." : "Jetzt Anfragen!"}
+        </button>
           </form>
+
+          {message && (
+        <div
+          className={`mt-6 p-3 rounded-lg text-center text-lg ${
+            message.type === "success" ? "bg-green-700 text-white" : "bg-red-500 text-white"
+          }`}
+        >
+          {message.text}
+        </div>
+      )}
         </div>
       </div>
     </div>
@@ -653,13 +821,6 @@ const Page = () => {
 
 
 
-
-   {/* CONTACT US FORM   */}
-
-
-   <ContactForm />
-   
-   {/* CONTACT US FORM   */}
 
 
 
@@ -698,10 +859,11 @@ const Page = () => {
         </div>
 
         <div className=" flex flex-col gap-2">
-          <h1 className={`  font-poppinsreg5 text-xl text-gray-200  `}>
+           <Link href="/impressum"> <h1  className={`  font-poppinsreg5 text-xl text-gray-200  `}>
             {" "}
        Impressum
           </h1>
+          </Link>
           <div
             className={` font-poppinsreg max-w-xs mt-1  lg:text-base text-sm flex flex-col gap-5 text-white `}
           >
@@ -711,7 +873,7 @@ const Page = () => {
             <h1> Our Role </h1>
             <h1> Partner Program </h1> */}
 
- <h1 className=' underline cursor-pointer'> View Impressum </h1>
+
             
           </div>
         </div>

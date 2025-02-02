@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Open_Sans, Poppins } from "next/font/google";
+import { Geist, Geist_Mono, Open_Sans, Playfair, Poppins } from "next/font/google";
 import "./globals.css";
 
 import {Providers} from "./providers";
@@ -20,6 +20,13 @@ const poppins = Poppins({
   weight: ["400", "700" , "900" , "500" , "600" , "100" ], 
   variable: "--font-poppins",
 });
+
+
+const playFair = Playfair({
+  subsets : ["latin"],
+  weight : ["300" , "400" , "500" , "600" , "700" , "800" , "900"],
+    variable : "--font-playfair"
+})
 
 
 
@@ -43,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`  ${poppins.variable} ${openSans.variable} `}
+        className={`  ${poppins.variable} ${openSans.variable} ${playFair.variable} `}
       > 
 
 <Providers>
