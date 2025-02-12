@@ -246,7 +246,7 @@ const Page = () => {
                 {/* showDivider={false} */}
 
                 <div className=" mt-3 flex flex-col gap-3">
-                  <h1
+                  {/* <h1
                     onClick={() => {
                       setclickedTab('home');
                     }}
@@ -256,28 +256,59 @@ const Page = () => {
                   >
                     {' '}
                     Home{' '}
-                  </h1>
+                  </h1> */}
                   <h1
                     onClick={() => {
-                      setclickedTab('courses');
+                      setclickedTab('aboutme');
+                      scrollToSection(aboutMe);
                     }}
                     className={` text-center ${
-                      clickedTab === 'courses' ? 'bg-[#FF385C]' : 'bg-[#2B2F39]'
+                      clickedTab === 'aboutme' ? 'bg-[#FF385C]' : 'bg-[#2B2F39]'
                     } font-poppinsreg py-2 rounded-md border  text-white`}
                   >
                     {' '}
-                    About Me{' '}
+                    ÜBER MICH{' '}
                   </h1>
                   <h1
                     onClick={() => {
-                      setclickedTab('about');
+                      setclickedTab('LEISTUNGEN{');
+                      scrollToSection(leistungen);
                     }}
                     className={` text-center ${
-                      clickedTab === 'about' ? 'bg-[#FF385C]' : 'bg-[#2B2F39]'
+                      clickedTab === 'LEISTUNGEN{'
+                        ? 'bg-[#FF385C]'
+                        : 'bg-[#2B2F39]'
                     } font-poppinsreg py-2 rounded-md border  text-white`}
                   >
                     {' '}
-                    Gallery{' '}
+                    LEISTUNGEN{' '}
+                  </h1>
+
+                  <h1
+                    onClick={() => {
+                      setclickedTab('PROJEKTE');
+                      scrollToSection(project);
+                    }}
+                    className={` text-center ${
+                      clickedTab === 'PROJEKTE'
+                        ? 'bg-[#FF385C]'
+                        : 'bg-[#2B2F39]'
+                    } font-poppinsreg py-2 rounded-md border  text-white`}
+                  >
+                    {' '}
+                    PROJEKTE{' '}
+                  </h1>
+                  <h1
+                    onClick={() => {
+                      setclickedTab('JETZT');
+                      scrollToSection(contactForm);
+                    }}
+                    className={` text-center ${
+                      clickedTab === 'JETZT' ? 'bg-[#FF385C]' : 'bg-[#2B2F39]'
+                    } font-poppinsreg py-2 rounded-md border  text-white`}
+                  >
+                    {' '}
+                    JETZT ANFRAGEN{' '}
                   </h1>
                 </div>
               </div>
