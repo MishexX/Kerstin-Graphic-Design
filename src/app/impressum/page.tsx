@@ -6,10 +6,10 @@ const Page = () => {
 
      const router =  useRouter()
   return (
-    <div
+    <div>
     className="relative min-h-screen bg-cover bg-center text-white p-6"
     style={{ backgroundImage: "url('/Background.png')" }} // Replace with your image
-  >
+  
     {/* Overlay */}
     <div className="absolute inset-0 bg-black/50"></div>
 
