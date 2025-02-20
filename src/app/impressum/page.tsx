@@ -31,14 +31,13 @@ const Page = () => {
 
       {/* Description */}
       <p className="mt-4 text-lg">
-        Lorem ipsum dolor sit amet consectetur. Accumsan consectetur nisl nunc
-        vulputate lacus massa nunc molestie.
+      Informationen und Offenlegung gemäß §5 (1) ECG, § 25 MedienG, § 63 GewO und § 14 UGB.
       </p>
 
       {/* User Details */}
       <div className="mt-6 space-y-4">
         <div>
-          <h2 className="text-2xl font-semibold">Lorem ipsum</h2>
+          <h2 className="text-2xl font-semibold">Kerstin Morokutti</h2>
           <div className=' mt-2 flex flex-col gap-2'>
 
          
@@ -49,7 +48,7 @@ const Page = () => {
 
             
             
-            <span>Lorem ipsum</span>
+            <span>Carminweg 6/2/6 , 1210 Wien</span>
           </p>
           <p className="flex items-center space-x-2">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6 text-white  ">
@@ -67,18 +66,27 @@ const Page = () => {
         </div>
 
         <div className=' border-b-2  pb-4 w-full  border-red-500'>
-          <h2 className="text-2xl font-bold">Lorem ipsum dolor</h2>
-          <p className="text-gray-300">Stever-ID: 16330/6863</p>
+          <h2 className="text-2xl font-bold">UID-Nr:</h2>
+          <p className="text-gray-300">Gewerbeaufsichtbehörde: Magistrat der Stadt Wien</p>
+          <p className="text-grey-300">Mitgliedschaften:Mitglied der WKO</p>
         </div>
       </div>
 
       {/* Additional Description */}
       <p className="mt-6 italic text-gray-300">
+        <p className="mt-6 italic text-gray-300">
+        Kontaktdaten:</p>
+      </p>
+      <p className="mt-6 italic text-gray-300">
+      Telefon: +43 6604837403<br></br>
+Email: morokutti.design@gmail.com<br></br>
+Fax: 
+      </p>
+      <p className="mt-6 italic text-gray-300">
         Lorem ipsum dolor sit amet consectetur. Enim condimentum elementum
         imperdiet felis nam purus cras mattis odio. Purus lorem semper in ut
         arcu ultricies. Velit amet eget cras vitae sed orci in nisl.
       </p>
-
       {/* Grid Content */}
       <div className="mt-6  text-lg">
         <div className=' flex items-center gap-10'>
