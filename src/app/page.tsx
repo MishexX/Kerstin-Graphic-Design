@@ -1,8 +1,8 @@
 'use client';
-import ContactForm from '@/components/ContactForm';
+//import ContactForm from '@/components/ContactForm';
 import ImageCarousel from '@/components/ImageCarousel';
 import Marquees from '@/components/Marquee';
-import Works from '@/components/Works';
+//import Works from '@/components/Works';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -10,7 +10,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { db, collection, addDoc } from '@/utils/firebase'; // Adjust path if needed
 
 const Page = () => {
-  const router = useRouter();
+//  const router = useRouter();
 
   const services = [
     {
@@ -68,7 +68,7 @@ const Page = () => {
 
   //   scroll to section
 
-  const scrollSectionRef = useRef<HTMLDivElement>(null);
+  //const scrollSectionRef = useRef<HTMLDivElement>(null);
 
   const aboutMe = useRef<HTMLDivElement>(null);
   const leistungen = useRef<HTMLDivElement>(null);
