@@ -17,19 +17,19 @@ const Page = () => {
       title: 'Branding & Corporate Design',
       description:
         'Von Logo-Design bis zur visuellen Identität – ich kreiere einen Look, der bleibt.',
-      imgSrc: '/car.avif', // Replace with actual image path
+      imgSrc: '/branding.jpg', 
     },
     {
       title: 'Printdesign',
       description:
         'Flyer, Broschüren, Visitenkarten & Co. – hochwertig gestaltet, um Eindruck zu hinterlassen.',
-      imgSrc: '/car.avif', // Replace with actual image path
+      imgSrc: '/Printdesign.jpg', 
     },
     {
       title: 'Social Media Design',
       description:
         'Designs, die deine Online-Präsenz pushen und echte Aufmerksamkeit erzeugen.',
-      imgSrc: '/car.avif', // Replace with actual image path
+      imgSrc: '/Social Media.jpg', 
     },
   ];
   const [openModal, setopenModal] = useState(false);
@@ -215,7 +215,7 @@ const Page = () => {
 
           <div
             ref={absoluteElementRef}
-            className={` lg:hidden fixed transition-all  overflow-y-auto  z-50   ease-in-out   duration-500 top-0  bg-[#141823] ${
+            className={` lg:hidden fixed transition-all  overflow-y-auto  z-50   ease-in-out   duration-500 top-0  bg-[#f2f2f2] ${
               openModal ? 'right-0 w-[70%]' : ' -right-full w-0'
             }  h-full `}
           >
@@ -263,7 +263,7 @@ const Page = () => {
                       scrollToSection(aboutMe);
                     }}
                     className={` text-center ${
-                      clickedTab === 'aboutme' ? 'bg-[#FF385C]' : 'bg-[#2B2F39]'
+                      clickedTab === 'aboutme' ? 'bg-[#303030]' : 'bg-[#2B2F39]'
                     } font-poppinsreg py-2 rounded-md border  text-white`}
                   >
                     {' '}
@@ -276,8 +276,8 @@ const Page = () => {
                     }}
                     className={` text-center ${
                       clickedTab === 'LEISTUNGEN{'
-                        ? 'bg-[#FF385C]'
-                        : 'bg-[#2B2F39]'
+                        ? 'bg-[#303030]'
+                        : 'bg-[#303030]'
                     } font-poppinsreg py-2 rounded-md border  text-white`}
                   >
                     {' '}
@@ -292,7 +292,7 @@ const Page = () => {
                     className={` text-center ${
                       clickedTab === 'PROJEKTE'
                         ? 'bg-[#FF385C]'
-                        : 'bg-[#2B2F39]'
+                        : 'bg-[#303030]'
                     } font-poppinsreg py-2 rounded-md border  text-white`}
                   >
                     {' '}
@@ -387,12 +387,12 @@ const Page = () => {
                 onClick={() => scrollToSection(contactForm)}
                 className="border  border-white px-6 py-2 text-white rounded-full"
               >
-                Jetzt anfragen
+                JETZT ANFRAGEN
               </button>
             </div>
 
             {/* Social Icons */}
-            <div className="flex justify-center space-x-4">
+            <div className="flex justify-center space-x-5">
               {/* <a href="#">
                 <img src="/whtsapp.png" alt="LinkedIn" className="w-fit" />
               </a>
@@ -403,25 +403,25 @@ const Page = () => {
                 <img src="/linkedin.png" alt="Instagram" className="w-fit" />
               </a> */}
               <a
-                href="https://wa.me/+94778319382"
+                href="https://wa.me/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/whtsapp.png" alt="WhatsApp" className="w-fit" />
+                <img src="/whtsapp.png" alt="WhatsApp" className="w-11 h-11 transform translate-y-12" />
               </a>
               <a
-                href="https://www.instagram.com/instaHandle"
+                href="https://www.instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/insta.png" alt="Instagram" className="w-fit" />
+                <img src="/insta.png" alt="Instagram" className="w-11 h-11 transform translate-y-12" />
               </a>
               <a
-                href="https://www.linkedin.com/in/linkedInProfile"
+                href="https://www.linkedin.com/in/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/linkedin.png" alt="LinkedIn" className="w-fit" />
+                <img src="/linkedin.png" alt="LinkedIn" className="w-11 h-11 transform translate-y-12" />
               </a>
             </div>
           </div>
@@ -489,7 +489,7 @@ const Page = () => {
       <div
         ref={leistungen}
         className="w-full relative bg-cover  "
-        style={{ backgroundImage: "url('/secondbg.png')" }}
+        style={{ backgroundImage: "url('/f2f2f2.jpg')" }}
       >
         {/* Content Section */}
         <div className="flex flex-col justify-center items-center w-full relative z-10 py-16">
@@ -498,7 +498,7 @@ const Page = () => {
           </h1>
 
           {/* Grid Items */}
-          <div className="grid px-4 mt-10 max-w-4xl mx-auto grid-cols-1 md:grid-cols-3 gap-8 place-items-center">
+          <div className="grid px- 50 mt-20 max-w-4xl mx-auto grid-cols-1 md:grid-cols-3 gap-8 place-items-center">
             {services.map((service, index) => (
               <div
                 key={index}
@@ -513,7 +513,7 @@ const Page = () => {
                     className="w-full h-full object-cover rounded-t-xl"
                   />
                 </div>
-                <h3 className="text-lg max-w-36 text-center mx-auto font-semibold mt-4">
+                <h3 className="text-lg max-w-36 text-center mx-auto font-semibold mt-5">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 mt-2 px-1">{service.description}</p>
@@ -526,7 +526,7 @@ const Page = () => {
 
       {/* THE SECTION THAT DOESNT TOUCH THE IMAGE BACKGROUND  */}
 
-      <div className=" bg-slate-900">
+      <div className=" bg-[#303030]">
         <Marquees />
       </div>
 
@@ -537,7 +537,7 @@ const Page = () => {
         className=" bg-[#f2f2f2]  border-black/10  border-b-2 w-full  py-20"
       >
         <div className="flex justify-center">
-          <h1 className="text-5xl text-center font-fontFair font-medium  w-fit rounded-full px-4 py-2 border-2 border-black b">
+          <h1 className="text-5xl text-center font-fontFair font-medium  w-fit rounded-full px-5 py-2 border-2 border-black b">
             PROJEKTE
           </h1>
         </div>
@@ -558,7 +558,7 @@ const Page = () => {
       {/* MY WORKS  */}
 
       {/* ABOUT ME  */}
-      <div ref={aboutMe} className="  py-10 bg-[#F2F2F2]   ">
+      <div ref={aboutMe} className="  py-10 bg-[#d7e3db]   ">
         <div className="  max-w-6xl mx-auto w-full">
           <div className=" grid lg:grid-cols-2 gap-6 lg:gap-6 px-4 items-center justify-center grid-cols-1">
             <Image
@@ -596,13 +596,16 @@ const Page = () => {
                     {' '}
                     Kerstin Morokutti{' '}
                     <span>
-                      <Image
-                        src="/line1.png"
-                        alt=""
-                        width={1000}
-                        height={1000}
-                        className=" absolute    top-3 scale-150 right-0 z-10 w-full h-full object-cover"
-                      />
+                      {/*
+    <Image
+      src="/line1.png" 
+      alt="" 
+      width={1000} 
+      height={1000} 
+      className="absolute top-3 scale-150 right-0 z-10 w-full h-full object-cover"
+    />
+  */}
+                      
                     </span>{' '}
                   </span>{' '}
                   {`– Grafikdesignerin aus Wien. Ich entwickle`}
@@ -656,7 +659,7 @@ const Page = () => {
           {/* Left side (Quote Card) */}
           <div>
             {/* title: "Einzigartiges Design",
-        text: "Ich war beeindruckt von der Detailgenauigkeit und Qualität. Absolut empfehlenswert!",
+        text: "Ich war beeindruckt von der Detailgenauigkeit und Qualität. Absolut empfehlenswert!sdasdaadsasdasddasadsdasdasasdadsdasadsasdadsadsasdasdadsasdadsasdasdasdasdasddsad",
         name: "Anna Müller",
         role: "CEO CreativeStudio",
         image: "/quote.png", */}
@@ -766,25 +769,25 @@ const Page = () => {
               </a> */}
 
               <a
-                href="https://wa.me/+94778319382"
+                href="https://wa.me/+"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/whtsapp.png" alt="WhatsApp" className="w-fit" />
+                <img src="/blackwhtsapp.png" alt="WhatsApp" className="w-11 h-11 transform translate-y- -2" />
               </a>
               <a
-                href="https://www.instagram.com/instaHandle"
+                href="https://www.instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/insta.png" alt="Instagram" className="w-fit" />
+                <img src="/balckinsta.png" alt="Instagram" className="w-11 h-11 transform translate-y- -2" />
               </a>
               <a
-                href="https://www.linkedin.com/in/linkedInProfile"
+                href="https://www.linkedin.com/in/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/linkedin.png" alt="LinkedIn" className="w-fit" />
+                <img src="/blacklinkedin.png" alt="LinkedIn" className="w-11 h-11 transform translate-y- -2" />
               </a>
             </div>
           </div>
@@ -850,10 +853,10 @@ const Page = () => {
                 className={`px-6 py-3 rounded-full text-lg ${
                   isFormValid
                     ? 'bg-black text-white'
-                    : 'bg-gray-500 text-gray-300 cursor-not-allowed'
+                    : 'bg-[#303030] text-gray-300 cursor-not-allowed'
                 }`}
               >
-                {loading ? 'Sending...' : 'Jetzt Anfragen!'}
+                {loading ? 'Sending...' : 'JETZT ANFRAGEN!'}
               </button>
             </form>
 
@@ -879,8 +882,8 @@ const Page = () => {
           <div className=" flex  justify-center  flex-col gap-1">
             <Image
               alt=""
-              src={'/logomain.png'}
-              className=" w-[30%] h-fit object-cover"
+              src={'/textLogo.png'}
+              className=" w-[40%] h-fit object-cover"
               width={1000}
               height={1000}
             />
@@ -895,7 +898,7 @@ const Page = () => {
               className={`  font-poppinsreg mt-1 lg:text-base text-sm flex flex-col gap-1  text-white `}
             >
               {/* <a
-                href="https://wa.me/+94778319382"
+                href="https://wa.me/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -917,16 +920,17 @@ const Page = () => {
               </a> */}
 
               <a
-                href="https://wa.me/+94778319382"
+                href="https://wa.me/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className=" cursor-pointer"
+                
               >
                 {' '}
                 Whatsapp{' '}
               </a>
               <a
-                href="https://www.instagram.com/instaHandle"
+                href="https://www.instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >

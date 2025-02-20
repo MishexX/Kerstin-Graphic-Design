@@ -30,7 +30,7 @@ export default function ImageCarousel() {
     
   return (
     <>
-    <div className="relative w-full flex items-center p-4 gap-5  max-w-7xl mx-auto">
+    <div className="relative w-full flex items-center p-4 gap-5  max-w-7xl  2xl:max-w-[80%] mx-auto">
       {/* Swiper Container */}
 
       {/* <button className="prev-btn h-fit  transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10">
@@ -142,7 +142,7 @@ placement="center"
             height={500}
             src={selectedProduct}
             alt=""
-            className="w-full h-64 object-cover rounded-t-xl"
+            className="w-full  h-full object-cover rounded-t-xl"
           />
                   
                 
