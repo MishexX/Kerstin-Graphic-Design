@@ -42,7 +42,7 @@ const Page = () => {
                                 <span>Kerstin Morokutti</span>
                             </p>
                             <p className="flex items-center space-x-2">
-                                <span>Carminweg 6/2/6 , 1210 Wien</span>
+                                <span>Anschrift: Carminweg 6/2/6 , 1210 Wien</span>
                             </p>
                         </div>
                     </div>
@@ -86,10 +86,12 @@ const Page = () => {
                     </div>
                 </div>
 
-                <p className="mt-6 text-lg">
-                    {/* User Details */}
-                    <span className="font-semibold">amet consectetur</span>
-                </p>
+                {/* 
+<p className="mt-6 text-lg">
+    User Details
+    <span className="font-semibold">amet consectetur</span>
+</p> 
+*/}
             </div>
         </div>
     );
