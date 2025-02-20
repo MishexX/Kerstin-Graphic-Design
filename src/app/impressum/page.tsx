@@ -37,7 +37,7 @@ const Page = () => {
       {/* User Details */}
       <div className="mt-6 space-y-4">
         <div>
-          <h2 className="text-2xl font-semibold">Kerstin Morokutti</h2>
+          <h2 className="text-2xl font-semibold">Webseitenbetreiber</h2>
           <div className=' mt-2 flex flex-col gap-2'>
 
          
@@ -48,7 +48,7 @@ const Page = () => {
 
             
             
-            <span>Carminweg 6/2/6 , 1210 Wien</span>
+            <span>Kerstin Morokutti</span>
           </p>
           <p className="flex items-center space-x-2">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6 text-white  ">
@@ -57,7 +57,7 @@ const Page = () => {
 
             
             
-             <span>Lorem ipsum</span>
+             <span>Carminweg 6/2/6 , 1210 Wien</span>
           </p>
 
           </div>
@@ -83,31 +83,18 @@ Email: morokutti.design@gmail.com<br></br>
 Fax: 
       </p>
       <p className="mt-6 italic text-gray-300">
-        Lorem ipsum dolor sit amet consectetur. Enim condimentum elementum
-        imperdiet felis nam purus cras mattis odio. Purus lorem semper in ut
-        arcu ultricies. Velit amet eget cras vitae sed orci in nisl.
+      Anwendbare Rechtsvorschrift: www.ris.bka.gv.at<br></br>
+      Berufsbezeichnung: Werbegrafikdesigner
       </p>
       {/* Grid Content */}
-      <div className="mt-6  text-lg">
-        <div className=' flex items-center gap-10'>
-        <p className="font-bold">Lorem ipsum</p>
-        <p>Lorem ipsum</p>
-        </div>
+      <p className="mt-6 italic text-gray-300">
+      Online Streitbeilegung: Verbraucher, welche in Österreich oder in einem sonstigen Vertragsstaat der ODR-VO niedergelassen sind, haben die Möglichkeit Probleme bezüglich dem entgeltlichen Kauf von Waren oder Dienstleistungen im Rahmen einer Online-Streitbeilegung (nach OS, AStG) zu lösen. Die Europäische Kommission stellt eine Plattform hierfür bereit: https://ec.europa.eu/consumers/odr
 
-        <div className=' flex items-center gap-10'>
-        <p className="font-bold">Lorem ipsum</p>
-        <p>Lorem ipsum</p>
-        </div>
+Urheberrecht: Die Inhalte dieser Webseite unterliegen, soweit dies rechtlich möglich ist, diversen Schutzrechten (z.B dem Urheberrecht). Jegliche Verwendung/Verbreitung von bereitgestelltem Material, welche urheberrechtlich untersagt ist, bedarf schriftlicher Zustimmung des Webseitenbetreibers.
 
-        <div className=' flex items-center gap-10'>
-        <p className="font-bold">Lorem ipsum</p>
-        <p>Lorem ipsum</p>
-        </div>
-
-        <div className=' flex items-center gap-10'>
-        <p className="font-bold">Lorem ipsum</p>
-        <p>Lorem ipsum</p>
-        </div>
+Haftungsausschluss: Trotz sorgfältiger inhaltlicher Kontrolle übernimmt der Webseitenbetreiber dieser Webseite keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich. Sollten Sie dennoch auf ausgehende Links aufmerksam werden, welche auf eine Webseite mit rechtswidriger Tätigkeit/Information verweisen, ersuchen wir um dementsprechenden Hinweis, um diese nach § 17 Abs. 2 ECG umgehend zu entfernen.
+Die Urheberrechte Dritter werden vom Betreiber dieser Webseite mit größter Sorgfalt beachtet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden derartiger Rechtsverletzungen werden wir den betroffenen Inhalt umgehend entfernen.
+      </p>
 
    
      
