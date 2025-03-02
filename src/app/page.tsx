@@ -513,7 +513,7 @@ const Page = () => {
                     className="w-full h-full object-cover rounded-t-xl"
                   />
                 </div>
-                <h3 className="text-lg max-w-36 text-center mx-auto font-semibold mt-5">
+                <h3 className="text-lg max-w-33 text-center mx-auto font-semibold mt-5">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 mt-2 px-1">{service.description}</p>
