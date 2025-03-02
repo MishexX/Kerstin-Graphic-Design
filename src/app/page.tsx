@@ -324,9 +324,9 @@ const Page = () => {
               <Image
                 src="/textLogo.png"
                 alt=""
-                className=" w-36 h-fit object-cover"
-                width={500}
-                height={500}
+                className=" w-40 h-fit object-cover"
+                width={1200}
+                height={1200}
               />
 
               <h1

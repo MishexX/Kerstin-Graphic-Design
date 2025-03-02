@@ -8,7 +8,7 @@ const Page = () => {
     return (
         <div
             className="relative min-h-screen bg-cover bg-center text-white p-6"
-            style={{ backgroundImage: "url('/Background.png')" }}
+            style={{ backgroundColor: "#bacac6" }}
         >
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/50"></div>
@@ -24,7 +24,7 @@ const Page = () => {
                 </button>
 
                 {/* Header */}
-                <h1 className="text-3xl font-bold border p-1 border-red-500 pb-1 inline-block">
+                <h1 className="text-3xl font-bold border p-1 border-#f2f2f2-500 pb-1 inline-block">
                     IMPRESSUM
                 </h1>
 
@@ -47,7 +47,7 @@ const Page = () => {
                         </div>
                     </div>
 
-                    <div className='border-b-2 pb-4 w-full border-red-500'>
+                    <div className='border-b-2 pb-4 w-full border-#f2f2f2'>
                         <h2 className="text-2xl font-bold">UID-Nr:</h2>
                         <p className="text-gray-300">Gewerbeaufsichtbehörde: Magistrat der Stadt Wien</p>
                         <p className="text-gray-300">Mitgliedschaften: Mitglied der WKO</p>

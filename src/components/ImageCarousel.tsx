@@ -40,7 +40,7 @@ export default function ImageCarousel() {
 
  
 
-<div className=" w-10 h-10 rounded-full flex justify-center items-center"> 
+<div className=" w-15 h-15 rounded-full flex justify-center items-center"> 
 
      
 
@@ -70,7 +70,7 @@ export default function ImageCarousel() {
       >
         {images.map((src, index) => (
           <SwiperSlide key={index}>
-            <Image onClick={() =>  { setSelectedProduct(src)  ; onOpen();   } } width={1000} height={1000} src={src} alt={`Slide ${index + 1}`} className="w-full h-48 cursor-pointer object-cover rounded-lg" />
+            <Image onClick={() =>  { setSelectedProduct(src)  ; onOpen();   } } width={2000} height={2000} src={src} alt={`Slide ${index + 1}`} className="w-full h-48 cursor-pointer object-cover rounded-lg" />
           </SwiperSlide>
         ))}
       </Swiper>
