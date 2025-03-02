@@ -263,7 +263,7 @@ const Page = () => {
                       scrollToSection(aboutMe);
                     }}
                     className={` text-center ${
-                      clickedTab === 'aboutme' ? 'bg-[#303030]' : 'bg-[#2B2F39]'
+                      clickedTab === 'aboutme' ? 'bg-[#2B2F39]' : 'bg-[#303030]'
                     } font-poppinsreg py-2 rounded-md border  text-white`}
                   >
                     {' '}
@@ -276,7 +276,7 @@ const Page = () => {
                     }}
                     className={` text-center ${
                       clickedTab === 'LEISTUNGEN{'
-                        ? 'bg-[#303030]'
+                        ? 'bg-[#2B2F39]'
                         : 'bg-[#303030]'
                     } font-poppinsreg py-2 rounded-md border  text-white`}
                   >
@@ -291,7 +291,7 @@ const Page = () => {
                     }}
                     className={` text-center ${
                       clickedTab === 'PROJEKTE'
-                        ? 'bg-[#FF385C]'
+                        ? 'bg-[#2B2F39]'
                         : 'bg-[#303030]'
                     } font-poppinsreg py-2 rounded-md border  text-white`}
                   >
@@ -304,7 +304,7 @@ const Page = () => {
                       scrollToSection(contactForm);
                     }}
                     className={` text-center ${
-                      clickedTab === 'JETZT' ? 'bg-[#FF385C]' : 'bg-[#2B2F39]'
+                      clickedTab === 'JETZT' ? 'bg-[#2B2F39]' : 'bg-[#303030]'
                     } font-poppinsreg py-2 rounded-md border  text-white`}
                   >
                     {' '}
@@ -318,13 +318,13 @@ const Page = () => {
           </div>
           {/* the hamburger sheet  */}
 
-          <div className=" w-[50%]  ">
+          <div className=" w-[50%]   2xl:-ml-10   lg:pt-2   ">
             {/* lg:flex hidden */}
             <div className="    font-poppins text-xl        font-normal gap-10 lg:flex hidden   items-center">
               <Image
                 src="/textLogo.png"
                 alt=""
-                className=" w-40 h-fit object-cover"
+                className=" w-56 h-fit object-cover"
                 width={1200}
                 height={1200}
               />
@@ -362,7 +362,7 @@ const Page = () => {
 
       {/* Content */}
       <div className=" absolute overflow-hidden top-0 flex justify-center items-center h-screen w-full">
-        <div className="max-w-7xl  gap-5   lg:mt-0 mt-0 md:mt-10 z-40 w-full flex flex-col  lg:grid lg:grid-cols-2 md:grid-cols-2  items-center px-6 md:px-12">
+        <div className="max-w-7xl 2xl:max-w-full  gap-5   lg:mt-0 mt-0 md:mt-10 z-40 w-full flex flex-col  lg:grid lg:grid-cols-2 md:grid-cols-2  items-center px-6 2xl:px-0 md:px-12">
           {/* Left Section */}
           <div className="flex flex-col space-y-4 text-white w-full ">
             {/* Logos */}
@@ -498,7 +498,7 @@ const Page = () => {
           </h1>
 
           {/* Grid Items */}
-          <div className="grid px- 50 mt-20 max-w-4xl mx-auto grid-cols-1 md:grid-cols-3 gap-8 place-items-center">
+          <div className="grid px- 50 mt-20 max-w-4xl  lg:px-0 px-4 mx-auto grid-cols-1 md:grid-cols-3 gap-8 place-items-center">
             {services.map((service, index) => (
               <div
                 key={index}
@@ -526,7 +526,7 @@ const Page = () => {
 
       {/* THE SECTION THAT DOESNT TOUCH THE IMAGE BACKGROUND  */}
 
-      <div className=" bg-[#303030]">
+      <div className=" bg-[#303030]  sm:py-0 py-4">
         <Marquees />
       </div>
 
@@ -847,10 +847,13 @@ const Page = () => {
               {/* <button className="bg-black text-white px-6 py-3 rounded-full text-lg">
               Jetzt Anfragen!
             </button> */}
+            <div className=' '>
+
+           
               <button
                 type="submit"
                 disabled={!isFormValid || loading}
-                className={`px-6 py-3 rounded-full text-lg ${
+                className={`px-6  py-3 rounded-full text-lg ${
                   isFormValid
                     ? 'bg-black text-white'
                     : 'bg-[#303030] text-gray-300 cursor-not-allowed'
@@ -858,6 +861,7 @@ const Page = () => {
               >
                 {loading ? 'Sending...' : 'JETZT ANFRAGEN!'}
               </button>
+              </div>
             </form>
 
             {message && (

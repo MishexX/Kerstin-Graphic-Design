@@ -30,7 +30,8 @@ export default function ImageCarousel() {
     
   return (
     <>
-    <div className="relative w-full flex items-center p-4 gap-5  max-w-7xl  2xl:max-w-[80%] mx-auto">
+    <div className="relative w-full flex items-center sm:p-4 p-2 gap-5  max-w-7xl  2xl:max-w-full
+     mx-auto">
       {/* Swiper Container */}
 
       {/* <button className="prev-btn h-fit  transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10">
@@ -70,7 +71,7 @@ export default function ImageCarousel() {
       >
         {images.map((src, index) => (
           <SwiperSlide key={index}>
-            <Image onClick={() =>  { setSelectedProduct(src)  ; onOpen();   } } width={2000} height={2000} src={src} alt={`Slide ${index + 1}`} className="w-full h-48 cursor-pointer object-cover rounded-lg" />
+            <Image onClick={() =>  { setSelectedProduct(src)  ; onOpen();   } } width={2000} height={2000} src={src} alt={`Slide ${index + 1}`} className="w-full h-56 cursor-pointer object-contain sm:object-cover rounded-lg" />
           </SwiperSlide>
         ))}
       </Swiper>
