@@ -28,12 +28,12 @@ const Marquees = () => {
   const marqueeContent = useMemo(
     () =>
       loopimages.map((i: any, ind: number) => (
-        <div key={ind} className="flex flex-col mx-6 py-5 flex-shrink-0 gap-4">
+        <div key={ind} className="flex flex-col mx-4 py-4 flex-shrink-0 gap-4">
           <Image
             src={i.image}
             alt=""
-            width={250}
-            height={250}
+            width={240}
+            height={240}
             className="w-fit  hover:scale-110 cursor-pointer h-28 rounded-full object-cover"
           />
           {/* <h1 className="text-center">{i.name}</h1> */}
