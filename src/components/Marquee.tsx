@@ -28,16 +28,16 @@ const Marquees = () => {
   const marqueeContent = useMemo(
     () =>
       loopimages.map((i: any, ind: number) => (
-        <div key={ind} className="flex overflow-x-auto scrollbar-hide space-x-4 px-4 scroll-smooth">
-          <Image
-            src={i.image}
-            alt=""
-            width={230}
-            height={230}
-            className="w-fit  hover:scale-110 cursor-pointer h-28 rounded-full object-cover"
-          />
-          {/* <h1 className="text-center">{i.name}</h1> */}
-        </div>
+        <div key={ind} className="flex scrollbar-hide space-x-4 px-4 w-full flex-wrap justify-center">
+  <Image
+    src={i.image}
+    alt=""
+    width={230}
+    height={230}
+    className="w-[230px] h-28 hover:scale-110 cursor-pointer rounded-full object-cover transition-transform duration-300"
+  />
+  {/* <h1 className="text-center">{i.name}</h1> */}
+</div>
       )),
     [loopimages],
   ); // Only re-calculate when loopimages changes
