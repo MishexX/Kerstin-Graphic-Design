@@ -97,17 +97,17 @@ const Page = () => {
       image: '/quote.png',
     },
     {
-      title: 'Einzigartiges Design',
-      text: 'Ich war beeindruckt von der Detailgenauigkeit und Qualität. Absolut empfehlenswert!',
-      name: 'Anna Müller',
-      role: 'CEO CreativeStudio',
+      title: 'Exceptional Design',
+      text: 'Morokutti Design delivered exactly what I wanted—with great attention to detail, quality, and professionalism. Absolutely recommendable! Im starting my rebranding and needed someone with style and a strong sense of design. I believe I have found the right person!',
+      name: 'Nikola Vodicka ',
+      role: '',
       image: '/quote.png',
     },
     {
       title: 'Hervorragende Arbeit',
-      text: 'Die Zusammenarbeit war fantastisch und die Ergebnisse übertrafen meine Erwartungen.',
-      name: 'Michael Schmidt',
-      role: 'Leiter Marketing',
+      text: 'Hervorragende Arbeit, die genau unseren Vorstellungen entsprach. Die Zusammenarbeit war professionell, kommunikativ und detailorientiert. Anpassungswünsche wurden mit Expertise umgesetzt. Wir empfehlen MorokuttiDesign gerne weiter und werden in Zukunft wieder auf sie zukommen.',
+      name: 'Michael Fischer',
+      role: '',
       image: '/quote.png',
     },
   ];
@@ -403,21 +403,21 @@ const Page = () => {
                 <img src="/linkedin.png" alt="Instagram" className="w-fit" />
               </a> */}
               <a
-                href="https://wa.me/"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img src="/whtsapp.png" alt="WhatsApp" className="w-11 h-11 transform translate-y-12" />
               </a>
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/morokutti.design?igsh=MWV5ZWxjNXh3Mnk2YQ%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img src="/insta.png" alt="Instagram" className="w-11 h-11 transform translate-y-12" />
               </a>
               <a
-                href="https://www.linkedin.com/in/"
+                href="https://www.linkedin.com/in/kerstin-morokutti-10b713263/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -769,21 +769,21 @@ const Page = () => {
               </a> */}
 
               <a
-                href="https://wa.me/+"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img src="/blackwhtsapp.png" alt="WhatsApp" className="w-11 h-11 transform translate-y- -2" />
               </a>
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/morokutti.design?igsh=MWV5ZWxjNXh3Mnk2YQ%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img src="/balckinsta.png" alt="Instagram" className="w-11 h-11 transform translate-y- -2" />
               </a>
               <a
-                href="https://www.linkedin.com/in/"
+                href="https://www.linkedin.com/in/kerstin-morokutti-10b713263/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -924,7 +924,7 @@ const Page = () => {
               </a> */}
 
               <a
-                href="https://wa.me/"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className=" cursor-pointer"
@@ -934,7 +934,7 @@ const Page = () => {
                 Whatsapp{' '}
               </a>
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/morokutti.design?igsh=MWV5ZWxjNXh3Mnk2YQ%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -943,7 +943,7 @@ const Page = () => {
               </a>
               {/* <h1 className=""> Twitter </h1> */}
               <a
-                href="https://www.linkedin.com/in/linkedInProfile"
+                href="https://www.linkedin.com/in/kerstin-morokutti-10b713263/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className=" cursor-pointer"
