@@ -28,7 +28,7 @@ const Marquees = () => {
   const marqueeContent = useMemo(
     () =>
       loopimages.map((i: any, ind: number) => (
-        <div key={ind} className="flex flex-col mx-4 py-3 gap-4 min-w-0 w-[230px]">
+        <div key={ind} className="flex overflow-x-auto scrollbar-hide space-x-4 px-4 scroll-smooth">
           <Image
             src={i.image}
             alt=""
