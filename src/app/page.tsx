@@ -7,7 +7,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
-import { db, collection, addDoc } from '@/utils/firebase'; // Adjust path if needed
 
 const Page = () => {
 //  const router = useRouter();
@@ -141,21 +140,39 @@ const Page = () => {
     setLoading(true);
 
     try {
-      await addDoc(collection(db, 'contacts'), formData);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Fehler beim Versenden');
+      }
 
       // Show success message
-      setMessage({ type: 'success', text: 'Form successfully submitted!' });
+      setMessage({ 
+        type: 'success', 
+        text: 'Vielen Dank! Deine Nachricht wurde erfolgreich versendet. Du erhältst eine Bestätigungsmail.' 
+      });
 
       // Reset Form
       setFormData({ firstName: '', lastName: '', email: '', message: '' });
 
-      // Remove success message after 4 seconds
-      setTimeout(() => setMessage(null), 4000);
+      // Remove success message after 6 seconds
+      setTimeout(() => setMessage(null), 6000);
     } catch (error) {
-      setMessage({ type: 'error', text: 'Submission failed! Try again.' });
+      setMessage({ 
+        type: 'error', 
+        text: 'Fehler beim Versenden. Bitte versuche es erneut oder kontaktiere mich direkt per E-Mail.' 
+      });
 
-      // Remove error message after 4 seconds
-      setTimeout(() => setMessage(null), 4000);
+      // Remove error message after 6 seconds
+      setTimeout(() => setMessage(null), 6000);
     }
 
     setLoading(false);
@@ -1008,6 +1025,43 @@ const Page = () => {
         </div>
       </div>
       {/* FOOTER FOOTER  */}
+      
+      {/* Structured Data (JSON-LD) for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Morokutti Design",
+            "description": "Durchdachtes Design, klare Botschaften – damit Deine Ideen sichtbar werden. Professionelles Grafikdesign für Branding, Printdesign und Social Media aus Wien.",
+            "url": "https://morokuttidesign.com",
+            "logo": "https://morokuttidesign.com/sitelogo.png",
+            "image": "https://morokuttidesign.com/sitelogo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Wien",
+              "addressCountry": "AT"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Austria"
+            },
+            "serviceType": [
+              "Grafikdesign",
+              "Branding",
+              "Corporate Design",
+              "Logo Design",
+              "Printdesign",
+              "Social Media Design"
+            ],
+            "founder": {
+              "@type": "Person",
+              "name": "Kerstin Morokutti"
+            }
+          })
+        }}
+      />
     </div>
   );
 };

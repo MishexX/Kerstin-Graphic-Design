@@ -1,9 +1,10 @@
 // app/providers.tsx
 'use client'
 
-import {HeroUIProvider} from '@heroui/react'
+import { HeroUIProvider } from '@heroui/react'
+import React from 'react'
 
-export function Providers({children}: { children: React.ReactNode }) {
+export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <HeroUIProvider>
       {children}
